@@ -17,11 +17,23 @@ public class Bike implements Vehicle, Ship {
 //        System.out.println("shape of the wheel is " + wheelShape + ",  number of wheel is " + wheelNum + ",  " +
 //                "shape of seat is " + seatShape + ".");
 
+
+    public boolean register() {
+        return false;
+    }
+
+    public void drive() {
+
+    }
+
     private String wheelShape = "round";
 
     protected Integer wheelNum = 2;
 
     public Bike(String wheel, int numOfWheel, String shapeOfSeat) {
+
+    }
+    public void Motorcycle(String wheel, int numOfWheel, String shapeOfSeat, int numOfPedal, int numOfGasTank, int numOfMotor) {
 
     }
 
