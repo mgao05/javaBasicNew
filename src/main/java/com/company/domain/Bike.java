@@ -1,8 +1,8 @@
 package com.company.domain;
 
 
-import com.company.repository.Ship;
-import com.company.repository.Vehicle;
+import com.company.interfaces.Ship;
+import com.company.interfaces.Vehicle;
 
 public class Bike implements Vehicle, Ship {
 

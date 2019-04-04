@@ -7,7 +7,7 @@ package com.company.domain;
 //    void register(int plate){ };
 //
 //}
-public abstract class Vehicle implements com.company.repository.Vehicle{
+public abstract class Vehicle implements com.company.interfaces.Vehicle{
     public void drive() {
         return;
     }

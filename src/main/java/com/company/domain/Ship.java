@@ -8,7 +8,7 @@ package com.company.domain;
 //
 //}
 
-public abstract class Ship implements com.company.repository.Ship{
+public abstract class Ship implements com.company.interfaces.Ship{
     public void floatRiver() {
         System.out.println("floating things");
     }
