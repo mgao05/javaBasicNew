@@ -1,6 +1,4 @@
-package com.company.domain;
-
-import com.company.domain.Bike;
+package com.company.vehicle;
 
 public class Motorcycle {
 

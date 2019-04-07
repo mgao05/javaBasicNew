@@ -1,4 +1,4 @@
-package com.company.domain;
+package com.company.vehicle;
 
 //public abstract class Ship {
 //    abstract void license();

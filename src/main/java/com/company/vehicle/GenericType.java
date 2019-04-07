@@ -1,4 +1,4 @@
-package com.company.domain;
+package com.company.vehicle;
 
 class Test<T> {
     T obj;
