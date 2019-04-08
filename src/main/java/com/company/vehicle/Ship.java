@@ -8,7 +8,7 @@ package com.company.vehicle;
 //
 //}
 
-public abstract class Ship implements com.company.interfaces.Ship{
+public abstract class Ship {
     public void floatRiver() {
         System.out.println("floating things");
     }

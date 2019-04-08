@@ -1,12 +1,12 @@
-//package com.company.algorithm;
-//
-//import javax.swing.tree.TreeNode;
-//import java.io.BufferedReader;
-//import java.io.IOException;
-//import java.io.InputStreamReader;
-//import java.util.*;
-//import java.util.Arrays;
-//
+package com.company.algorithm;
+
+import javax.swing.tree.TreeNode;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+import java.util.Arrays;
+
 //
 // // Definition for a binary tree node.
 //
@@ -24,34 +24,46 @@
 //
 //
 //
-//class MaximumBinaryTree {
-//    class TreeNode {
-//        int val;
-//        MaximumBinaryTree.TreeNode left;
-//        MaximumBinaryTree.TreeNode right;
-//        TreeNode(int x) { val = x; }
-//    }
-//
-//    public TreeNode constructMaximumBinaryTree(int[] nums) {
-//        return createSubTree(nums);}
-//    public int getMaxIndex(int[] nums){
-//        int i = -1;
-//        int max = -1;
-//        for(int j=0; j<= nums.length-1; j++){
-//            if(nums[j] >= max){i=j;max = nums[j];}
-//        }
-//        return i;
-//    }
-//    public TreeNode createSubTree(int[] nums){
-//        int index = getMaxIndex(nums);
-//        if(index < 0){return null;}
-//        TreeNode root = new TreeNode(nums[index]);
-////        int[] left = Arrays.copyOfRange(nums,0,index);
-////        int[] right = Arrays.copyOfRange(nums, index+1, nums.length);
-////        root.left = createSubTree(left);
-////        root.right = createSubTree(right);
-//        return root;
-//    }
+public class MaximumBinaryTree {
+    class TreeNode {
+        int val;
+        MaximumBinaryTree.TreeNode left;
+        MaximumBinaryTree.TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
+    public TreeNode constructMaximumBinaryTree(int[] nums) {
+        return createSubTree(nums);
+    }
+
+    public int getMaxIndex(int[] nums) {
+        int i = -1;
+        int max = -1;
+        for (int j = 0; j <= nums.length - 1; j++) {
+            if (nums[j] >= max) {
+                i = j;
+                max = nums[j];
+            }
+        }
+        return i;
+    }
+
+    public TreeNode createSubTree(int[] nums) {
+        int index = getMaxIndex(nums);
+        if (index < 0) {
+            return null;
+        }
+        TreeNode root = new TreeNode(nums[index]);
+        int[] left = Arrays.copyOfRange(nums, 0, index);
+        int[] right = Arrays.copyOfRange(nums, index + 1, nums.length);
+        root.left = createSubTree(left);
+        root.right = createSubTree(right);
+        return root;
+    }
+}
 //}
 //
 //public class MainClass {

@@ -9,6 +9,10 @@
     <name>java-basic</name>
 
 
+    <properties>
+        <java-version>1.8</java-version>
+    </properties>
+
 
     <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
     <dependencies>
@@ -18,6 +22,24 @@
             <version>26.0-jre</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+
+    </build>
 
 
 </project>

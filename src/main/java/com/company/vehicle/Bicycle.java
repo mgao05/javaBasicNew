@@ -1,7 +1,7 @@
 package com.company.vehicle;
 
 
-public class Bicycle extends Bike {
+public class Bicycle{
 
     int pedalNum;
 
@@ -13,7 +13,7 @@ public class Bicycle extends Bike {
     }
 
     public Bicycle(String wheel, int numOfWheel, String shapeOfSeat, int numOfPedal) {
-        super(wheel, numOfWheel, shapeOfSeat);
+        //super(wheel, numOfWheel, shapeOfSeat);
         pedalNum = numOfPedal;
         System.out.println("number of pedal is "+ pedalNum +".");
 //        Bicycle.isStatic();

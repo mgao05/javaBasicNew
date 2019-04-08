@@ -7,7 +7,7 @@ package com.company.vehicle;
 //    void register(int plate){ };
 //
 //}
-public abstract class Vehicle implements com.company.interfaces.Vehicle{
+public abstract class Vehicle{
     public void drive() {
         return;
     }
