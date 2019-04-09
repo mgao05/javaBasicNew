@@ -31,12 +31,14 @@ public class DataKey {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DataKey dataKey = (DataKey) o;
-        return id == dataKey.id &&
-                Objects.equals(name, dataKey.name);
+        if (id!= dataKey.id) return false;
+        return name != null ? name.equals(dataKey.name) : dataKey.name == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, id);
+        int result = name !=null ? name.hashCode() : 0;
+        result = 31 * result + id;
+        return result;
     }
 }

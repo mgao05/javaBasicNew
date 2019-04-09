@@ -2,25 +2,80 @@ package com.company.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class BaseballScore {
+        public int calPoints(String[] ops) {
+            Stack<Integer> storage = new Stack<>();
+            for (int i=0; i<= ops.length-1; i++){
+                if(ops[i].equals("D")){
+                    int score = storage.peek();
+                    score = 2*score;
+                    //int score =Integer.parseInt(storage.peek()) *2;
+                    storage.push(score);
+                }
+                else if(ops[i].equals("C")){
+                    storage.pop();
+                }
 
-        public List<Integer> findDuplicates(int[] nums) {
-            int [] array = new int [nums.length];
-            int i =0;
-            while (i<=nums.length-1){
-                array[nums[i]-1] = array[nums[i]-1]+1;
-                i++;
+                else if(ops[i].equals("+")){
+                    int first = (Integer)(storage.pop());
+                    int second = (Integer)(storage.peek());
+                    int score = first+second;
+                    storage.push(first);
+                    storage.push(score);
+                }
+                else{
+                    storage.push(Integer.parseInt(ops[i]));
+                }
             }
-            int j =0;
-            List<Integer> keeper = new ArrayList<Integer>();
-            while(j<=array.length-1){
-                if (array[j]>=2){
-                    keeper.add(j+1);
-                    j++;}
-                else j++;
+
+            int sum = 0;
+            while (storage.empty()==false){
+                sum+=storage.pop();
             }
-            return keeper;
+            return sum;
+        }
+
+    public int calPointsSwitchCase(String[] ops){
+        Stack<Integer> storage = new Stack<>();
+        for (int i=0; i<= ops.length-1; i++){
+            String input = ops[i];
+            switch(input){
+                case "D":
+                    int score = storage.peek();
+                    score = 2*score;
+                    //int score =Integer.parseInt(storage.peek()) *2;
+                    storage.push(score);
+                    break;
+                case "C":
+                    storage.pop();
+                    break;
+                case "+":
+                    int first = (Integer)(storage.pop());
+                    int second = (Integer)(storage.peek());
+                     score = first+second;
+                    storage.push(first);
+                    storage.push(score);
+                    break;
+                default:
+                    storage.push(Integer.parseInt(ops[i]));
+                    break;
+            }
+        }
+        int sum = 0;
+        while (storage.empty()==false){
+            sum+=storage.pop();
+        }
+        return sum;
+
+    }
+
+        public static void main(String[] args){
+            String[] arr = {"5","2","C","D"};
+            BaseballScore baseballScore = new BaseballScore();
+            System.out.println(baseballScore.calPointsSwitchCase(arr));
         }
     }
+
 

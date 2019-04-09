@@ -39,7 +39,7 @@ public class User implements Comparable<User> {
 //    public int compareTo(User user){
 //        return (this.salary.compareTo(user.salary));
 //    }
-//    
+//
 //    public int compareTo(User user){
 //        return (this.age.compareTo(user.age));
 //    }
