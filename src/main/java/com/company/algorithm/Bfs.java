@@ -7,16 +7,6 @@ import java.util.Queue;
 
 public class Bfs {
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
-
     public static List<Integer> largestValues(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
@@ -45,8 +35,8 @@ public class Bfs {
 
 
     public static void main(String[] args) {
-
-        TreeNode root = new TreeNode(1);
+//        Bfs instance = new Bfs();
+        TreeNode root =  new TreeNode(1);
         TreeNode node1 = new TreeNode(3);
         TreeNode node2 = new TreeNode(2);
         TreeNode node3 = new TreeNode(5);
@@ -61,5 +51,12 @@ public class Bfs {
         System.out.println(bfs.largestValues(root));
     }
 
+//    public static class TreeNode {
+//        int val;
+//        TreeNode left;
+//        TreeNode right;
+//        TreeNode(int x) {
+//            val = x;
+//        }
+    }
 
-}

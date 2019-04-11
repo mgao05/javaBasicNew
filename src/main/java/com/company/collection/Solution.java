@@ -7,7 +7,7 @@ public class Solution {
     public static Comparator<User> SalaryComparator = new Comparator<User>() {
         //sort by salary
        // @Override
-        //todo why no override here
+
         public int compare(User o1, User o2) {
             return (int) (o1.getSalary() - o2.getSalary());
         }
